@@ -3,6 +3,7 @@
 class LoginController{
 
     public function index(){
+    require_once __DIR__ ."/../config/session.php";
     require_once __DIR__ . "/../middlware/auth.php";
     guestOnly();
 
@@ -12,13 +13,14 @@ class LoginController{
         $email = $_POST["email"];
         $password = $_POST["password"];
         
-
+        require_once __DIR__ . "/../config/db.php";
         require_once __DIR__ . "/../models/User.php";
-        $user = new User() ;
+        $user = new User($pdo) ;
         
         $isAuthenticated = $user->authenticate($email, $password); 
 
         if ($isAuthenticated){
+            $_SESSION["user"] = $user->getUserByEmail($email);
             header(("Location: /?route=home"));
         }else{
             $error  =  "Incorrect email or password !!!";

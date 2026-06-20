@@ -34,3 +34,10 @@ function adminOnly():void{
     exit();
     }
 }
+
+function authOnly():void{
+    if (empty($_SESSION["user"])){
+    header("Location: /?route=login");
+    exit();
+    }
+}
