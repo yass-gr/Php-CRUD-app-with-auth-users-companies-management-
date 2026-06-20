@@ -3,6 +3,8 @@
 require_once __DIR__ . "/../controllers/HomeController.php";
 require_once __DIR__ . "/../controllers/ContactsController.php";
 require_once __DIR__ . "/../controllers/LoginController.php";
+require_once __DIR__ . "/../controllers/RegisterController.php";
+require_once __DIR__ . "/../controllers/LogoutController.php";
 
 
 
@@ -24,6 +26,14 @@ switch ($route) {
 
     case "login": 
         $controller = new LoginController();
+        $controller->index();
+        break;
+    case "register": 
+        $controller = new RegisterController();
+        $controller->index();
+        break;
+    case "logout": 
+        $controller = new LogoutController();
         $controller->index();
         break;
 };
