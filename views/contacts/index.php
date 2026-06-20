@@ -10,6 +10,51 @@
 <body>
     <?php require_once __DIR__ . "/../shared/header.php"; ?>
 
- Contacts
+ <div class="container-fluid">
+    <h1 class="mt-5">Contacts</h1>
+ <a  href="/?route=add"><button class="btn btn-success mb-3">Add Contact</button></a>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Sec Name</th>
+    <th>Tel</th>
+    <th>Email</th>
+    <th>Adress</th>
+    <th>Company name</th>
+    <th>actions</th>
+  </thead>
+  
+  <tbody>
+
+    <? foreach($contacts as $c): ?>
+        
+        <tr>
+            <td><?=  $c["name"] ?></td>
+            <td><?=  $c["sec_name"] ?></td>
+            <td><?=  $c["tel"] ?></td>
+            <td><?=  $c["email"] ?></td>
+            <td><?=  $c["adress"] ?></td>
+            <td><?=  $c["company"] ?></td>
+            <td> 
+                <a href="/?route=edit&id=<?= $c["id"] ?>"><button class="btn btn-warning">Edit</button></a>
+                <a href="/?route=delete&id=<?= $c["id"] ?>"><button class="btn btn-danger">Delete</button></a>
+
+            </td>
+        </tr>
+
+    <? endforeach ?>
+
+
+
+
+
+  </tbody>
+</table>
+
+ </div>
 </body>
+
+
+
 </html>
