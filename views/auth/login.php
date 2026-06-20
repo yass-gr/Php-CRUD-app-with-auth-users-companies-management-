@@ -21,6 +21,7 @@
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
   </div>
+  <p class="text-danger"><?=  $error ?></p>
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

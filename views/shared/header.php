@@ -5,7 +5,7 @@
         <h1>Gestion</h1>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="nav-link active" aria-current="page" href="/?route=home">
                 Home
                 </a>
             </li>
