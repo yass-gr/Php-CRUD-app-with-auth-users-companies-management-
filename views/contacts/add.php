@@ -15,33 +15,37 @@
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
     <input type="text" class="form-control" id="exampleInputEmail1" name="name" >
-    <p class="text-danger"><?= $errors["name"] ?></p>
+    <p class="text-danger"><?= $validation["name"] ?? "" ?></p>
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="secName" >
-    <p class="text-danger"><?= $errors["secName"] ?></p>
+    <label for="exampleInputEmail1" class="form-label">Second Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="sec_name" >
+    <p class="text-danger"><?= $validation["sec_name"] ?? "" ?></p>
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <label for="exampleInputEmail1" class="form-label">Tel</label>
     <input type="tel" class="form-control" id="exampleInputEmail1" name="tel" >
-    <p class="text-danger"><?= $errors["tel"] ?></p>
+    <p class="text-danger"><?= $validation["tel"] ?? "" ?></p>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-    <p class="text-danger"><?= $errors["email"] ?></p>
+    <p class="text-danger"><?= $validation["email"] ?? "" ?></p>
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <label for="exampleInputEmail1" class="form-label">Adress</label>
     <input type="text" class="form-control" id="exampleInputEmail1" name="adress" aria-describedby="emailHelp">
-    <p class="text-danger"><?= $errors["adress"] ?></p>
+    <p class="text-danger"><?= $validation["adress"] ?? "" ?></p>
   </div>
- <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-    <p class="text-danger"><?= $errors[""] ?></p>
-  </div>
+  <select name="company" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Company</option>
+  <? foreach($companies as $cm): ?>
+    <option value="<?= htmlspecialchars($cm["id"]) ?>" > <?= htmlspecialchars($cm["name"])  ?></option>
+  <? endforeach ?>
+
+</select>
+<p class="text-danger"><?= $validation["company"] ?? "" ?></p>
+
  
 
   
