@@ -2,9 +2,9 @@
 
 class LogoutController{
 
-    public function index(){
-    require_once __DIR__ ."/../config/session.php";
-    require_once __DIR__ . "/../middlware/auth.php";
+    public function index() : void{
+    require_once __DIR__ ."/../../config/session.php";
+    require_once __DIR__ . "/../../middlware/auth.php";
     authOnly();
 
    
@@ -17,7 +17,9 @@ class LogoutController{
         exit();
 
     }
-    require_once __DIR__ . "/../views/auth/logout.php";
+   else{
+     require_once __DIR__ . "/../../views/auth/logout.php";
+   }
 
 
     }

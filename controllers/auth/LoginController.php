@@ -2,9 +2,9 @@
 
 class LoginController{
 
-    public function index(){
-    require_once __DIR__ ."/../config/session.php";
-    require_once __DIR__ . "/../middlware/auth.php";
+    public function index():void{
+    require_once __DIR__ ."/../../config/session.php";
+    require_once __DIR__ . "/../../middlware/auth.php";
     guestOnly();
 
     $error = "";
@@ -13,8 +13,7 @@ class LoginController{
         $email = $_POST["email"];
         $password = $_POST["password"];
         
-        require_once __DIR__ . "/../config/db.php";
-        require_once __DIR__ . "/../models/User.php";
+        require_once __DIR__ . "/../../config/db.php";
         $user = new User($pdo) ;
         
         $isAuthenticated = $user->authenticate($email, $password); 
@@ -22,11 +21,14 @@ class LoginController{
         if ($isAuthenticated){
             $_SESSION["user"] = $user->getUserByEmail($email);
             header(("Location: /?route=home"));
+            exit();
         }else{
             $error  =  "Incorrect email or password !!!";
         }
+       
     }
-    require_once __DIR__ . "/../views/auth/login.php";
+    
+    require_once __DIR__ . "/../../views/auth/login.php";
 
 
     }

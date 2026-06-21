@@ -1,10 +1,6 @@
 <?php
 
-require_once __DIR__ . "/../controllers/HomeController.php";
-require_once __DIR__ . "/../controllers/ContactsController.php";
-require_once __DIR__ . "/../controllers/LoginController.php";
-require_once __DIR__ . "/../controllers/RegisterController.php";
-require_once __DIR__ . "/../controllers/LogoutController.php";
+
 
 
 
@@ -14,17 +10,9 @@ $route = $_GET["route"] ?? "home";
 
 
 switch ($route) {
-    case "home": 
-        $controller = new HomeController();
-        $controller->index();
-        break;
+    
 
-
-    case "contacts": 
-        $controller = new ContactsController();
-        $controller->index();
-        break;
-
+    //auth
     case "login": 
         $controller = new LoginController();
         $controller->index();
@@ -37,6 +25,52 @@ switch ($route) {
         $controller = new LogoutController();
         $controller->index();
         break;
+
+    //-------
+
+    //contacts
+    case "contacts": 
+        $controller = new ContactsController();
+        $controller->index();
+        break;
+
+    case "contacts/add": 
+        $controller = new addContactsController();
+        $controller->index();
+        break;
+    case "contacts/update": 
+        $controller = new updateContactsController();
+        $controller->index();
+        break;
+
+    //-------
+
+    //companies
+    case "companies": 
+        $controller = new CompaniesController();
+        $controller->index();
+        break;
+
+    case "companies/add": 
+        $controller = new addCompaniesController();
+        $controller->index();
+        break;
+    case "companies/update": 
+        $controller = new updateCompaniesController();
+        $controller->index();
+        break;
+    //---------
+    
+
+    
+
+    default: 
+        $controller = new HomeController();
+        $controller->index();
+        break;
+
+
+
 };
 
 
