@@ -12,7 +12,7 @@
 <body>
     <?php require_once __DIR__ . "/shared/header.php"; ?>
 
- <h1 class="mt-5 p-3 text-center"> Bienvenue <?= $_SESSION["user"]["name"] ?? "Guest" ?>!</h1>
+ <h1 class="mt-5 p-3 text-center"> Bienvenue <?= htmlspecialchars($_SESSION["user"]["name"] ?? "Guest") ?>!</h1>
 
         <div class="btns d-flex gap-2 p-3 justify-content-center">
             <a href="/?route=contacts"><button class="btn btn-primary">Contacts</button></a>

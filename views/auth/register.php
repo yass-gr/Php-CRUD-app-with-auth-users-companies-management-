@@ -14,23 +14,23 @@
     <form method="POST">
         <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="name">
-    <p class="text-danger"><?= $errors["name"] ?></p>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="name" >
+    <p class="text-danger"><?= $validation["name"] ?? "" ?></p>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-    <p class="text-danger"><?= $errors["email"] ?></p>
+    <p class="text-danger"><?= $validation["email"] ?? "" ?></p>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-    <p class="text-danger"><?= $errors["password"] ?></p>
+    <p class="text-danger"><?= $validation["password"] ?? "" ?></p>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Confirm password</label>
     <input type="password" name="passwordConf" class="form-control" id="exampleInputPassword1">
-    <p class="text-danger"><?= $errors["passwordConf"] ?></p>
+    <p class="text-danger"><?= $validation["passwordConf"] ?? "" ?></p>
   </div>
  
 

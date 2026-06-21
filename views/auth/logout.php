@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php require_once __DIR__ . "/../shared/header.php"; ?>
-<h1 class="text-center my-5">Are you sure you wan't to logout? </h1>
+<h1 class="text-center my-5">Are you sure you want to logout? </h1>
 <div class="btns d-flex justify-content-center gap-3">
     <a href="/?route=logout&logout=true"><button class="btn btn-danger">Yes</button></a>
 <a href="/?route=home"><button class="btn btn-secondary">Cancel</button></a>
