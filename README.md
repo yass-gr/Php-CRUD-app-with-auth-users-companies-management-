@@ -1,6 +1,7 @@
 # PHP CRUD App with Auth — Users & Companies Management
 
-A learning project built with vanilla PHP to understand the fundamentals of web development: MVC architecture, authentication, form validation, and database interaction.
+A learning project built with vanilla PHP to understand the fundamentals of the language:
+MVC architecture, authentication, form validation, and database interaction.
 
 ## Features
 
@@ -9,7 +10,6 @@ A learning project built with vanilla PHP to understand the fundamentals of web 
 - Full CRUD for contacts (name, phone, email, address, company)
 - Full CRUD for companies (name, address, website)
 - Input validation extracted into reusable middleware functions
-- CSRF-ready pattern (token generation left as exercise)
 - PSR-4 autoloader (custom, no Composer)
 
 ## What I Learned
